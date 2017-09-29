@@ -1,0 +1,125 @@
+/*HEADER SECTION */
+div.container-fluid {
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+}
+
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #660000;
+}
+
+.header {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.name > a {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    justify-content: center;
+    padding: 2em;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.name > a:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.name > a > h1 {
+    font-size: 3em;
+}
+
+.name > a > h2 {
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.navi {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navi > ul {
+    list-style-type: none; 
+}
+
+.navi > ul > li {
+    display: inline;
+    font-size: 1.2em;
+    padding: 3em 1em 3.9em 1em;
+    margin: 0;
+}
+
+.navi > ul > li > a {
+    color: white;
+    text-decoration: none;
+}
+
+.navi > ul > li > a:hover {
+    background-color: dimgray;
+}
+
+
+/*BACKGROUND IMAGE*/
+body {
+    background-color: dimgray;
+}
+
+
+/*TEXT BOX*/
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-end;
+    height: 25em;
+}
+.para {
+    border: 4px white solid;
+    border-radius: 8px;
+    text-align: center;
+    background-color: white;
+    font-size: 17px;
+}
+
+.para > p {
+    margin: 0;
+    padding: 1em;
+}
+
+/*ultimate frisbee content*/
+.fris {
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+}
+
+.fris > h1, .fris > h2 {
+    align-content: center;
+    justify-content: center;
+    padding: 2em;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+ul.bullet {
+    align-content: center;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+ul.bullet > li {
+    list-style-type: none;
+    color: white;
+}
