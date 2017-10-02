@@ -25,7 +25,8 @@ ENV = Environment(
 client = boto3.client(
   'ses',
   aws_access_key_id=os.environ.get('AWS_ACCESS_KEY'),
-  aws_secret_access_key=os.environ.get('AWS_SECRET_KEY')
+  aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'),
+  region_name ='us-east-1'
 )
 
 #whenever you wanna make a template, this func is called
@@ -55,6 +56,12 @@ class UltimateHandler(TemplateHandler):
 
 #for form-sample HTML Page
 class FormHandler(TemplateHandler):
+  def get(self):
+    self.set_header(
+      'Cache-Control',
+      'no-store, no-cache, must-revalidate, max-age=0')
+    self.render_template("form-sample.html")
+
   def post(self, page):
     name = self.get_body_argument('name')
     email = self.get_body_argument('email')
@@ -73,11 +80,11 @@ class FormHandler(TemplateHandler):
         },
         'Subject': {'Charset': 'UTF-8', 'Data': ''},
       },
-      Source='zmgoose13@gmail.com',
+      Source='zmgoose13@gmail.com'
+    )
     self.write('Thanks got your data<br>')
-    self.write('Email: ' + email)
+    #self.write('Email: ' + email)
     self.redirect('/thank-you-for-submitting')
-)
 
 
 #for Hiking HTML Page
@@ -118,7 +125,7 @@ def make_app():
     return tornado.web.Application([
         # Routes
         (r"/", MainHandler),
-        (r"/form-sample", FormHandler)
+        (r"/form-sample", FormHandler),
         (r"/ultfris", UltimateHandler),
         (r"/hiking", HikingHandler),
         (r"/weightlifting", WeightliftingHandler),
