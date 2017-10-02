@@ -26,7 +26,7 @@ client = boto3.client(
   'ses',
   aws_access_key_id=os.environ.get('AWS_ACCESS_KEY'),
   aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'),
-  region_name ='us-east-1'
+  region_name ='us-west-2'
 )
 
 #whenever you wanna make a template, this func is called
