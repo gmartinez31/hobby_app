@@ -62,7 +62,7 @@ class FormHandler(TemplateHandler):
       'no-store, no-cache, must-revalidate, max-age=0')
     self.render_template("form-sample.html")
 
-  def post(self, page):
+  def post(self):
     name = self.get_body_argument('name')
     email = self.get_body_argument('email')
     text = self.get_body_argument('text')
